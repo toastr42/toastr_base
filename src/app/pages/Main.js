@@ -10,7 +10,11 @@ import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter, Link, Route } from "react-router-dom";
+import { TwitterLogin } from "react-twitter-auth";
+
 import Tweet from "./Tweet";
+import Login from "./components/Login";
+
 
 const styles = {
   container: {
@@ -48,11 +52,7 @@ class Main extends Component {
 
   render() {
     const standardActions = (
-      <FlatButton
-        label="Ok"
-        primary={true}
-        onTouchTap={this.handleRequestClose}
-      />
+      <Login/>
     );
 
     return (
@@ -68,11 +68,8 @@ class Main extends Component {
           </Dialog>
           <h1>Toastr</h1>
           <h3>Social Media Manager</h3>
-          <RaisedButton
-            label="Login with Twitter"
-            secondary={true}
-            onTouchTap={this.handleTouchTap}
-          />
+          <Login/>
+       
 					<p />
 					<div>
        
@@ -96,3 +93,16 @@ class Main extends Component {
 }
 
 export default Main;
+
+/* 
+<FlatButton
+label="Ok"
+primary={true}
+onTouchTap={this.handleRequestClose}
+/> */
+/* 
+<RaisedButton
+label="Login with Twitter"
+secondary={true}
+onTouchTap={this.handleTouchTap}
+/> */
