@@ -96,12 +96,3 @@ class Main extends Component {
 }
 
 export default Main;
-
-/* {this.props.children}
-<Link to="/">Home</Link>
-<Link to="tweet">Tweet</Link>
- */
-/* 
-<Link to={"/tweet"}>
-Tweet
-</Link> */

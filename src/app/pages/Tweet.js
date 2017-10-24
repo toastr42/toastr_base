@@ -10,7 +10,7 @@ import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Twit from "./twit";
+import Twit from "./components/twit";
 
 const styles = {
   container: {
