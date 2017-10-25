@@ -23,7 +23,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "firebase": "^4.6.0",
+    "express": "^4.16.2",
     "firebaseui": "^2.4.1",
     "history": "^4.7.2",
     "material-ui": "latest",
