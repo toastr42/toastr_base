@@ -13,6 +13,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import { TwitterLogin } from "react-twitter-auth";
 
 import Tweet from "./Tweet";
+import EmailLogin from "./components/EmailLogin";
 import Login from "./components/Login";
 
 
@@ -77,6 +78,10 @@ class Main extends Component {
             <h1>Home Page</h1>
           )}/>
           <Route path="/tweet" component={Tweet}/>
+          <Route path="/email-login" component={EmailLogin}/>
+          <Link to={"/email-login"}>
+          <RaisedButton secondary={true}>Email Login</RaisedButton>
+          </Link>
           <Link to={"/tweet"}>
               <RaisedButton secondary={true}>Tweet</RaisedButton>
           </Link>

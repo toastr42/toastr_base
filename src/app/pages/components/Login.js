@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import TwitterLogin from "react-twitter-auth/lib/react-twitter-auth-component.js"
-import firebase from "./firebase";
+import firebase from "firebase";
 
-var provider = new firebase.auth.TwitterAuthProvider();
+    var provider = new firebase.auth.TwitterAuthProvider();
 
 export default class login extends Component {
     constructor () {
