@@ -11,6 +11,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Twit from "./components/twit";
+import Login from "./components/Login";
 
 const styles = {
   container: {
@@ -62,6 +63,7 @@ class Tweet extends Component {
       		<p />
 					<div>
 					<p>Time to make a Twit!</p>
+          <Login/>
           <Twit/>
 					</div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import firebase from "firebase";
+import UserPage from "./userPage";
 
 var config = {
     apiKey: "AIzaSyCJhlG41Yk_si3ah4c2M1JhPudlhoXM5q4",
@@ -18,8 +19,12 @@ var config = {
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
+     /*    const welcomeMsg = "Welcome " + firebaseUser.displayName;
+        this.props.personalize(welcomeMsg); */
         console.log(firebaseUser);
+  
     } else {
+        console.log(firebaseUser);
         console.log("not logged in");
     }
 });
@@ -28,7 +33,7 @@ export default class Login extends React.Component {
     constructor() {
         super();
         this.state = {
-            email: "",
+            email: "a@gmail.com",
             password: "",
         }
         this.btnLogin = this.btnLogin.bind(this);
@@ -38,6 +43,7 @@ export default class Login extends React.Component {
         this.handlePassChange = this.handlePassChange.bind(this);
     }   
     
+
     btnLogin(e) {
         console.log(this.state);
         const promise = auth.signInWithEmailAndPassword(this.state.email, this.state.password);
@@ -49,6 +55,7 @@ export default class Login extends React.Component {
                 console.log("not logged in");
             }
         }); */
+     
     }
 
 /*     authListener() */
@@ -72,6 +79,7 @@ export default class Login extends React.Component {
     }
 
     handleEmailChange(e) {
+
         const email = e.target.value;
         this.setState({
             email: email,
@@ -90,9 +98,9 @@ export default class Login extends React.Component {
     render() {
     return (
         <div>
-            <input placeholder={"email"} onChange={this.handleEmailChange}/>
+            <input value={this.state.email} placeholder={"email"} onChange={this.handleEmailChange}/>
             <br/>
-            <input placeholder={"password"} onChange={this.handlePassChange}/>
+            <input placeholder={"password"} type={"password"} onChange={this.handlePassChange}/>
             <br/>
             <button onClick={this.btnSignup}>Signup</button>
             <button onClick={this.btnLogin}>Login</button>

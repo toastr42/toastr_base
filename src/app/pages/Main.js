@@ -15,7 +15,21 @@ import { TwitterLogin } from "react-twitter-auth";
 import Tweet from "./Tweet";
 import EmailLogin from "./components/EmailLogin";
 import Login from "./components/Login";
+import firebase from "firebase";
 
+
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if (firebaseUser) {
+   /*    const welcomeMsg = "Welcome " + firebaseUser.displayName;
+      this.props.personalize(welcomeMsg);
+    */   console.log(firebaseUser.displayName);
+
+  } else {
+      console.log(firebaseUser);
+      console.log("not logged in");
+  }
+});
 
 const styles = {
   container: {
@@ -36,7 +50,21 @@ class Main extends Component {
 
     this.state = {
       open: false,
+      welcome: "Welcome To Toastr",
     };
+  }
+
+  personalize = () => {
+    var user = firebase.auth().currentUser;
+    if (user) {
+      var welcomeMsg = "Welcome " + user.displayName + "!"; 
+    } else {
+      var welcomeMsg = "Welcome to Toastr!";
+    }
+    // console.log(user.displayName);
+    this.setState({
+      welcome: welcomeMsg,
+    });
   }
 
   handleRequestClose = () => {
@@ -69,16 +97,17 @@ class Main extends Component {
           </Dialog>
           <h1>Toastr</h1>
           <h3>Social Media Manager</h3>
-          <Login/>
-       
+          <Login personalize={this.personalize.bind(this)}/>
+          <br/>
+          <button onClick={this.personalize}>personalize</button>
 					<p />
 					<div>
        
           <Route exact path="/" render={() => (
-            <h1>Home Page</h1>
+            <h1>{this.state.welcome}</h1>
           )}/>
           <Route path="/tweet" component={Tweet}/>
-          <Route path="/email-login" component={EmailLogin}/>
+          <Route path="/email-login" component={EmailLogin } personalize={this.personalize.bind(this)}/>
           <Link to={"/email-login"}>
           <RaisedButton secondary={true}>Email Login</RaisedButton>
           </Link>

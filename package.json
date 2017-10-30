@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "express": "^4.16.2",
+    "firebase": "^4.6.0",
     "firebaseui": "^2.4.1",
     "history": "^4.7.2",
     "material-ui": "latest",
