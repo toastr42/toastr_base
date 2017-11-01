@@ -56,7 +56,12 @@ class Main extends Component {
 
   personalize = () => {
     var user = firebase.auth().currentUser;
+  
     if (user) {
+      console.log(user.providerData[0]);
+      var token = user.getIdToken();
+
+      console.log(token);
       var welcomeMsg = "Welcome " + user.displayName + "!"; 
     } else {
       var welcomeMsg = "Welcome to Toastr!";

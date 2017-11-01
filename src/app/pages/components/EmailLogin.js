@@ -13,6 +13,9 @@ var config = {
   
   const firebaseApp = firebase.initializeApp(config);
   const auth = firebaseApp.auth();
+  const database = firebaseApp.database();
+  const storageMediaFiles = firebaseApp.storage();
+
 
 /* var provider = new firebase.auth.TwitterAuthProvider();
  */
@@ -21,7 +24,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
      /*    const welcomeMsg = "Welcome " + firebaseUser.displayName;
         this.props.personalize(welcomeMsg); */
-        console.log(firebaseUser);
+        console.log("user is signed in");
   
     } else {
         console.log(firebaseUser);
