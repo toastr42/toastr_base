@@ -61,6 +61,7 @@ class Main extends Component {
       console.log(user.providerData[0]);
       var token = user.getIdToken();
 
+
       console.log(token);
       var welcomeMsg = "Welcome " + user.displayName + "!"; 
     } else {

@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import TwitterLogin from "react-twitter-auth/lib/react-twitter-auth-component.js"
 import firebase from "firebase";
+/* import request from "ajax-request"; */
+import $ from "jquery";
 
 var provider = new firebase.auth.TwitterAuthProvider();
 var googs = new firebase.auth.GoogleAuthProvider();
@@ -44,11 +46,6 @@ export default class Login extends Component {
         });
       });
       console.log("here");
-    //  console.log(result);
-      // this.setState({
-      //   userTwitterToken: "have fun in",
-      //   userTwitterSecret: "the sun",
-      // })
       
       // firebase.auth().getRedirectResult().then(function(result) {
       //   if (result.credential) {
@@ -119,7 +116,29 @@ export default class Login extends Component {
       console.log(this.state.tweet);
       console.log(this.state.userTwitterToken);
       console.log(this.state.userTwitterSecret);
+      $.ajax({
+        type: 'POST',
+        url: 'https://api.twitter.com/1.1/statuses/update.json',
+        dataType: 'string',
+        header: "Access-Control-Allow-Origin",
+        data: this.state.tweet,
+        success: function(data) {
+          console.log(data);
+        },
 
+      });
+    /*   request({
+        url: 'https://api.twitter.com/1.1/statuses/update.json',
+        method: 'POST',
+        data: {
+          status: this.state.tweet,
+        }
+      }, function(err, res, body) {
+        console.log(res);
+        console.log(err);
+        console.log(body);
+      }); */
+      
     /*   var xmlHttp = new XMLHttpRequest();
 
       xmlHttp.open("POST", "https://api.twitter.com/1.1//statuses/update.json", false);

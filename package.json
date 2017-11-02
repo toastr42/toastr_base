@@ -23,10 +23,15 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "ajax-request": "^1.2.3",
     "express": "^4.16.2",
+    "fd": "0.0.2",
+    "file-system": "^2.2.2",
     "firebase": "^4.6.0",
     "firebaseui": "^2.4.1",
+    "fs": "0.0.1-security",
     "history": "^4.7.2",
+    "jquery": "^3.2.1",
     "material-ui": "latest",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
