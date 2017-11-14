@@ -1,0 +1,7 @@
+{
+"consumerKey": "9V4MrALUPnbEcxTL2uQmQgV4l",
+"consumerSecret": "D6EpOyRHOnHpr7Ll6HGmV8WbrRg9iMwZfq99L3LUvi17uqvQQJ",
+"accessToken": "2834533010-CxSzbtoVwMBGCwyyMP2wu6s8lDAXPg7LDlpUaER",
+"accessTokenSecret": "mSKECOTmbjRwfDZT9btqC3R88AvbLQ9xe1qaZP4yH43GI",
+"callBackUrl": "localhost.toastr.com:3000/callback"
+}
