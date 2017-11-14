@@ -17,7 +17,7 @@ const config = {
     hot: true, // Live-reload
     inline: true,
     port: 3000, // Port Number
-    host: 'localhost', // Change to '0.0.0.0' for external facing server
+    host: 'localhost.toastr.com', // Change to '0.0.0.0' for external facing server
   },
   devtool: 'eval',
   output: {

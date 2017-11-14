@@ -20,17 +20,17 @@ var config = {
 /* var provider = new firebase.auth.TwitterAuthProvider();
  */
 
-firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser) {
-     /*    const welcomeMsg = "Welcome " + firebaseUser.displayName;
-        this.props.personalize(welcomeMsg); */
-        console.log("user is signed in");
+// firebase.auth().onAuthStateChanged(firebaseUser => {
+//     if (firebaseUser) {
+//      /*    const welcomeMsg = "Welcome " + firebaseUser.displayName;
+//         this.props.personalize(welcomeMsg); */
+//         console.log("user is signed in");
   
-    } else {
-        console.log(firebaseUser);
-        console.log("not logged in");
-    }
-});
+//     } else {
+//         console.log(firebaseUser);
+//         console.log("not logged in");
+//     }
+// });
 
 export default class Login extends React.Component {
     constructor() {

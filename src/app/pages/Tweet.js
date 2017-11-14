@@ -63,7 +63,6 @@ class Tweet extends Component {
       		<p />
 					<div>
 					<p>Time to make a Twit!</p>
-          <Login/>
           <Twit/>
 					</div>
         </div>

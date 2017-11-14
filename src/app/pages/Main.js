@@ -6,6 +6,7 @@ import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 import {blue300} from 'material-ui/styles/colors';
+import {red700} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -16,15 +17,17 @@ import Tweet from "./Tweet";
 import EmailLogin from "./components/EmailLogin";
 import Login from "./components/Login";
 import firebase from "firebase";
-
+// import "./grids.css";
+// import "css-grid";
 
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
    /*    const welcomeMsg = "Welcome " + firebaseUser.displayName;
       this.props.personalize(welcomeMsg);
-    */   console.log(firebaseUser.displayName);
-
+    */  
+    console.log(firebaseUser.displayName);
+    console.log("auth state observing function triggered");    
   } else {
       console.log(firebaseUser);
       console.log("not logged in");
@@ -85,6 +88,11 @@ class Main extends Component {
     });
   }
 
+  logout = () => {
+    firebase.auth().signOut();
+    console.log("logout called");
+  }
+
   render() {
     const standardActions = (
       <Login/>
@@ -123,6 +131,8 @@ class Main extends Component {
           <Link to={"/"}>
           <RaisedButton secondary={true}>Home</RaisedButton>
           </Link>
+            <br/>
+            <RaisedButton backgroundColor={red700} onClick={this.logout}>logout</RaisedButton>
             <br/>
 						More coming soon™
 					</div>

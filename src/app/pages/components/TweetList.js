@@ -10,18 +10,18 @@ constructor(props) {
 showTweets = () => {
     var self = this;
     var user = firebase.auth().currentUser;
-    console.log(user);
-    $.ajax({
+    console.log("current user ",user);
+    $.get("https://api.twitter.com/1.1/statuses/home_timeline.json", {}, function(data) {
+        console.log(data);
+    });
+    /* $.ajax({
         type: 'GET',
-        dataType: 'jsonp',
-        data: {
-            q: 'cats'
-        },
-        url: 'https://api.twitter.com/1.1/lists/statuses.json?',
+        data: {},
+        url: 'https://api.twitter.com/1.1/statuses/home_timeline.json?',
         success: function(data) {
             console.log(data);
         }
-    });
+    }); */
 }
 
 render() {
